@@ -1,0 +1,20 @@
+{
+	"name": "lightster/lstr-silex-template",
+	"description": "Lstr/Silex/Template Library",
+	"keywords": [
+		"silex",
+		"lstr",
+		"lightster",
+		"template"
+	],
+	"homepage": "http://lightdatasys.com",
+	"autoload": {
+		"psr-0": {
+			"Lstr\\Silex\\Template\\": "src/Lstr/Silex"
+		}
+	},
+	"require": {
+		"php": ">=5.3",
+		"silex/silex": "~1.1"
+	}
+}
