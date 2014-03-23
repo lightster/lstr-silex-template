@@ -10,7 +10,7 @@
 	"homepage": "http://lightdatasys.com",
 	"autoload": {
 		"psr-0": {
-			"Lstr\\Silex\\Template\\": "src/Lstr/Silex"
+			"Lstr\\Silex\\Template\\": "src/"
 		}
 	},
 	"require": {
