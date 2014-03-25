@@ -27,8 +27,6 @@ class TemplateService
         $this->path    = $app['lstr.template.path'];
     }
 
-
-
     public function render($name, array $context = array())
     {
         $app = $this->app;
@@ -54,6 +52,7 @@ class TemplateService
                     'path' => $name_path,
                     'ext'  => $file_ext,
                 ];
+
                 return $renderer($path_info, $context);
             }
         }

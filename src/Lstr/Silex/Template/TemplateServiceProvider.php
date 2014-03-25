@@ -28,6 +28,7 @@ class TemplateServiceProvider implements ServiceProviderInterface
             'phtml' => $app->share(function (array $path_info, array $context = array()) use ($app) {
                 ob_start();
                 require $path_info['path'];
+
                 return ob_get_clean();
             }),
         );
