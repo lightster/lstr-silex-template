@@ -17,11 +17,25 @@ use Silex\ServiceProviderInterface;
 
 class TemplateServiceProvider implements ServiceProviderInterface
 {
+    private $defaults;
+
+    public function __construct(array $defaults = array())
+    {
+        $this->defaults = array_replace(
+            array(
+                'options'  => array(),
+                'path'     => new ArrayObject(),
+                'renderer' => null,
+            ),
+            $defaults
+        );
+    }
+
     public function register(Application $app)
     {
-        $app['lstr.template.options']  = array();
-        $app['lstr.template.path']     = new ArrayObject();
-        $app['lstr.template.renderer'] = array(
+        $app['lstr.template.options']  = $this->defaults['options'];
+        $app['lstr.template.path']     = $this->defaults['path'];
+        $app['lstr.template.renderer'] = $this->defaults['renderer'] ?: array(
             'html' => $app->share(function (array $path_info, array $context = array()) use ($app) {
                 return file_get_contents($path_info['path']);
             }),
